@@ -1,0 +1,25 @@
+<h2>Sample asm.js code</h2>
+
+<pre class="language-javascript"><code class="language-javascript">
+function DummyAsmModule(stdlib, foreign, heap) {
+    "use asm";
+    function addone(x,y) {
+        x = x|0; //annotate as int
+        y = +y; //annotate as double
+        var a = 0,  //declare local int 
+            b = 0.0;  //declare local double
+        return (x+1)|0; // annotate return val as int
+    }
+
+    return {addone: addone};
+}
+    </code>
+</pre>
+
+<div class="notes">
+    <ul>
+        <li>stdlib: a standard library object, providing access to (a subset of) the standard library (mainly Math onbject).</li>
+        <li>foreign: a foreign function interface (FFI) providing access to arbitrary external JavaScript functions.</li>
+        <li>heap: a heap buffer, an instance of ArrayBuffer that acts as the asm.js heap.</li>
+    </ul>
+</div>
