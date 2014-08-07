@@ -19,6 +19,10 @@ ul li {
 	list-style: square;
 }
 
+ul ul {
+	margin-left: 40px;
+}
+
 pre[class*="language-"] {
 	padding: 0;
 	border: 3px solid white;
