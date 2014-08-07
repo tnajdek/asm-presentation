@@ -1,6 +1,4 @@
-//actually slower atm
-
-function NaivePrime(stdlib, foreign, heap) {
+function HandasmNaivePrime(stdlib, foreign, heap) {
 	"use asm";
 
 	var sqrt = stdlib.Math.sqrt,
@@ -48,15 +46,3 @@ function NaivePrime(stdlib, foreign, heap) {
 		countPrimes: countPrimes
 	};
 }
-
-var prime = NaivePrime(window);
-var start = Date.now(),
-	end, diff, count;
-
-count = prime.countPrimes(1000000);
-
-end = Date.now();
-
-diff = end - start;
-
-alert("primes count:" + count + "; time:" + diff);

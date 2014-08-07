@@ -16,6 +16,26 @@ function DummyAsmModule(stdlib, foreign, heap) {
     </code>
 </pre>
 
+<pre class="language-javascript"><code class="language-javascript">
+function runDummyAsmModule() {
+    var dummy = DummyAsmModule(window);
+    alert(dummy.addone(12, 34.55));
+}
+</code></pre>
+
+<script>
+function runDummyAsmModule() {
+    var dummy = DummyAsmModule(window);
+    alert(dummy.addone(12, 34.55));
+}
+</script>
+
+<div class="center">
+    <button id="dummy-module-run" onclick="runDummyAsmModule()">
+        Execute!
+    </button>
+</div>
+
 <div class="notes">
     <ul>
         <li>stdlib: a standard library object, providing access to (a subset of) the standard library (mainly Math onbject).</li>
@@ -23,3 +43,7 @@ function DummyAsmModule(stdlib, foreign, heap) {
         <li>heap: a heap buffer, an instance of ArrayBuffer that acts as the asm.js heap.</li>
     </ul>
 </div>
+
+<script>
+    Prism.highlightAll();
+</script>

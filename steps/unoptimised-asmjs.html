@@ -1,0 +1,52 @@
+<h2>Unoptimised asm.js</h2>
+
+<p>
+	Count how many primes there are between 0 and 1 million*
+</p>
+
+<script>
+function nativePrimesTest() {	
+	var start = Date.now(),
+		primes = new NativeNaivePrime(),
+		end, diff, count;
+
+	count = primes.countPrimes(1000000);
+
+	end = Date.now();
+
+	diff = end - start;
+
+	alert("primes count:" + count + "; time:" + diff);
+}
+
+function handasmPrimesTest() {
+	var start = Date.now(),
+		primes = HandasmNaivePrime(window),
+		end, diff, count;
+
+	count = primes.countPrimes(1000000);
+
+	end = Date.now();
+
+	diff = end - start;
+
+	alert("primes count:" + count + "; time:" + diff);
+}
+</script>
+
+<div class="center">
+
+	<button onclick="nativePrimesTest();">
+		Plain JS
+	</button>
+	<button onclick="handasmPrimesTest();">
+		Hand-writtem asm.js
+	</button>
+
+</div>
+
+
+
+<small>
+	* - using naive loop
+</small>

@@ -1,0 +1,58 @@
+<h2>Let's try again</h2>
+
+<script>
+function nativePrimesTest() {	
+	var start = Date.now(),
+		primes = new NativeNaivePrime(),
+		end, diff, count;
+
+	count = primes.countPrimes(1000000);
+
+	end = Date.now();
+
+	diff = end - start;
+
+	alert("primes count:" + count + "; time:" + diff);
+}
+
+function handasmPrimesTest() {
+	var start = Date.now(),
+		primes = HandasmNaivePrime(window),
+		end, diff, count;
+
+	count = primes.countPrimes(1000000);
+
+	end = Date.now();
+
+	diff = end - start;
+
+	alert("primes count:" + count + "; time:" + diff);
+}
+
+function asmPrimesTest() {
+	var start = Date.now(),
+		countPrimes = Module.cwrap('countPrimes', 'number', ['number']),
+		end, diff, count;
+
+	count = countPrimes(1000000);
+
+	end = Date.now();
+
+	diff = end - start;
+
+	alert("primes count:" + count + "; time:" + diff);
+}
+</script>
+
+<div class="center">
+	<button onclick="nativePrimesTest();">
+		Plain JS
+	</button>
+	<button onclick="handasmPrimesTest();">
+		Hand-writtem asm.js
+	</button>
+	<button onclick="asmPrimesTest();">
+		asm.js
+	</button>
+</div>
+
