@@ -49,3 +49,11 @@ button {
 small {
 	font-size: 14px;
 }
+
+q {
+	background-color: #272822;
+	color: #fff;
+	padding: 3px;
+	font-size: 32px;
+	border: 2px solid #fff;
+}
