@@ -27,8 +27,9 @@ int countPrimes(int n) {
 	return counter;
 }
 
-
+#ifndef EMSCRITEN
 int main(int agrc, char *argv[]) {
 	printf("%d\n", countPrimes(1000000));
 	return 0;
 }
+#endif
